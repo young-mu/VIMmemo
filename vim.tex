@@ -1,0 +1,122 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{flushend} % align twocoloumn bottom
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=0.4cm, bottom=1.6cm} % page margin
+
+\begin{document}
+
+\twocolumn
+
+\pagestyle{empty}
+\title{VIM commands memo v1.0}
+\author{Young}
+\date{2014.08.26}
+\maketitle
+\thispagestyle{empty} % remove page number 
+
+\setlength{\baselineskip}{12pt} % set line space
+
+\begin{enumerate}
+\item{\textbf{EDIT mode}}
+	\begin{itemize}
+	\item move \\
+	\textbf{\#j{$|$}\#k{$|$}\#h{$|$}\#l} : down{$|$}up{$|$}left{$|$}right \\
+	\textbf{\#w{$|$}\#e} : next word head{$|$}tail \\
+	\textbf{\#b} : prev word head \\ 
+	\textbf{\^{$|$}\$} : line head{$|$}tail \\ 
+	\textbf{0} : line head including space
+	\item jump \\
+	\textbf{\#G} : file \#line \\
+	\textbf{\#\%} : file \# percentage \\ 
+	\textbf{gg{$|$}G} : file head{$|$}tail \\ 
+	\textbf{[[{$|$}]]} : segment start{$|$}end \\
+	\textbf{\%} : matching brace
+	\item flip \\
+	\textbf{CTRL+f{$|$}b} : next{$|$}prev page \\
+	\textbf{SHIFT+Dn{$|$}Up} : next{$|$}prev page \\
+	\textbf{PgDn{$|$}PgUp} : next{$|$}prev page \\
+	\textbf{CTRL+d{$|$}u} : next{$|$}prev halfpage
+	\item insert \\
+	\textbf{i{$|$}a} : cur{$|$}next char \\
+	\textbf{I{$|$}A} : line head{$|$}tail \\
+	\textbf{O{$|$}o} : new cur{$|$}next line \\ 
+	\textbf{s} : del char and insert \\ 
+	\textbf{cc(S)} : del line and insert \\
+	\textbf{c\${$|$}(C)} : del to line tail and insert
+	\item cut(delete) \\
+	\textbf{\#x} : char \\
+	\textbf{dd{$|$}d\#d{$|$}dd} : line \\
+	\textbf{dw{$|$}d\#w{$|$}dw} : cut to char head \\
+	\textbf{d\^{$|$}d\$(D)} : cut to line head{$|$}tail
+	\item yank \\
+	\textbf{yy{$|$}Y{$|$}y\#y{$|$}\#yy} : line \\
+	\textbf{yw{$|$}y\#w{$|$}\#yw} : yank to char head \\
+	\textbf{y\^{$|$}y\$} : yank to line head{$|$}tail
+	\item paste \\
+	\textbf{P{$|$}p} : before{$|$}after cur char
+	\item undo/redo \\
+	\textbf{\#u} : undo one operation\\ 
+	\textbf{e!} : undo all operations \\
+	\textbf{CTRL+r} : redo one operation
+	\item find/replace \\
+	\textbf{m,n/} : find forward(n) or backward(N) \\ 
+	\textbf{m,n?} : find backward(n) or forward(N) \\
+	\textbf{r} : replace cur char
+	\item split screen \\
+	\textbf{CTRL+w+w} : \\ switch among files \\
+	\textbf{CTRL+w+Up{$|$}Dn} : \\ switch to file above{$|$}below \\
+	\textbf{CTRL+w+s{$|$}v} : \\ split cur file horizontally{$|$}vertically \\
+	\textbf{CTRL+w+\#+{$|$}\#-} : \\ increase{$|$}decrease window size 
+	\item others \\
+	\textbf{*} : selectcur word \\
+	\textbf{.} : re-operate \\
+	\textbf{ZZ} : save \& exit
+	\end{itemize}
+\item{\textbf{INSERT mode}}
+\item{\textbf{LASTLINE mode}}
+	\begin{itemize}
+	\item save \& exit \\
+	\textbf{w{$|$}w!} : save{$|$}save forcibly \\
+	\textbf{q{$|$}q!} : exit{$|$}exit without saving \\ 
+	\textbf{wq(x)} : save \& exit \\
+	\textbf{qa(qall)} : exit all labeled files
+	\item split screen \\
+	\textbf{sp{$|$}vsp} : \\ split cur file horizontally{$|$}vertically \\
+	\textbf{sp{$|$}vsp FILE} : \\ open new file horizontally{$|$}vertically
+	\item jump \\
+	\textbf{n} : jump to line\#n \\
+	\textbf{1{$|$}\$} : jump to file head{$|$}tail
+	\item switch among files \\
+	\textbf{n(next){$|$}prev} : next{$|$}prev file \\
+	\textbf{first{$|$}last} : first{$|$}last file
+	\item demarcate \\
+	\textbf{m,ny} : yank line\#m to line\#n \\
+	\textbf{m,+ny} : yank n lines after line\#m \\  
+	\textbf{.{$|$}1{$|$}\$} : cur{$|$}first{$|$}last line \\
+	\textbf{\%} : all lines 
+	\item replace \\
+	\textbf{s/pattern/subs/gi} : \\ replace \textit{pattern} to subs \\ (g=global i=ignorecase)
+	\item others \\
+	\textbf{e FILE} : open file \\
+	\textbf{m,nw FILE} : \\ write from line\#m to line\#n to file \\
+	\textbf{r FILE} : read file to cursor \\
+	\textbf{! CMD} : execute shell command \\
+	\textbf{sh} : switch to shell (CTRL+d return) \\
+	\textbf{view} : set read-only mode \\
+	\textbf{set ic{$|$}noic} : ignorecase{$|$}NO ignorecase
+	\end{itemize}
+\item{\textbf{VISUAL mode}}
+	\begin{itemize}
+	\item chars select \\
+	\textbf{v} : multiple-char operation (y{$|$}x{$|$}...)
+	\item lines select \\
+	\textbf{SHIFT+v} : multiple-line shift \\
+	$>${$|$}$<${$|$}= : left{$|$}right{$|$}auto shift
+	\item block selct \\
+	\textbf{CTRL+v} : multiple-line annotation \\
+	I : insert (ESC return)
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
