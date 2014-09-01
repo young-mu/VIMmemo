@@ -1,2 +1,4 @@
 vim.log
 vim.aux
+plugin.log
+plugin.aux

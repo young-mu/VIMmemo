@@ -1,0 +1,114 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{flushend} % align twocoloumn bottom
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=0.4cm, bottom=1.6cm} % page margin
+
+\begin{document}
+
+\twocolumn
+
+\pagestyle{empty}
+\title{VIM plugin commands memo v1.0}
+\author{Young}
+\date{2014.09.01}
+\maketitle
+\thispagestyle{empty} % remove page number 
+
+\setlength{\baselineskip}{12pt} % set line space
+
+\begin{enumerate}
+\item{\textbf{ctags}}
+	\begin{itemize}
+	\item{EDIT mode} \\
+	\textbf{CTRL+]} : deninition fo callee \\
+	\textbf{CTRL+t} : return to caller 
+	\item{LASTLINE mode} \\
+	\textbf{tags} : functions call stack
+	\end{itemize}
+\item{\textbf{cscope}}
+	\begin{itemize}
+	\item{EDIT mode} \\
+	CTRL+SHIFT+'-'+\textbf{g} : its own definition \\
+	CTRL+SHIFT+'-'+\textbf{d} : functions called by it \\
+	CTRL+SHIFT+'-'+\textbf{c} : fucntions calling it \\
+	CTRL+SHIFT+'-'+\textbf{f} : its own file \\
+	CTRL+SHIFT+'-'+\textbf{i} : files including it
+	\item{LASTLINE mode} \\
+	\textbf{cs show} : show cscope connection \\
+	\textbf{cs help} : show help
+	\end{itemize}
+\item{\textbf{snipMate}}
+	\begin{itemize}
+	\item C \\
+	\textbf{inc} : \#include <stdio.h>  \\
+	\textbf{Inc} : \#include "test.h" \\
+	\textbf{main} : ... main ... \\
+	\textbf{\#if} : \#if ... \#endif \\
+	\textbf{ifdef} : \#ifdef ... \#endif \\
+	\textbf{once} : \#ifndef ... \#define ... \#endif \\
+	\textbf{def} : \#define \\
+	\textbf{td} : typdef int ... \\
+	\textbf{tds} : typdef struct ... \\
+	\textbf{if} : if ... \\
+	\textbf{el} : else ... \\
+	\textbf{for} : for ... \\
+	\textbf{wh} : while ... \\
+	\textbf{pr} : printf("%s\n"); \\
+	\textbf{fun} : void func() {} ... \\
+	\textbf{fund} : void function\_name(); \\
+	\textbf{t} : /*condition*/ ? a : b; \\
+	\textbf{.} : [] \\
+	\textbf{un} : unsigned
+	\item C++ \\
+	\textbf{ns} : namespace ... \\
+	\textbf{cl} : class ... 
+	\item Java \\
+	\textbf{main} : ... main ... \\
+	\textbf{pu{$|$}pr{$|$}po} : public{$|$}private{$|$}protected \\
+	\textbf{st} : static \\
+	\textbf{fi} : final \\
+	\textbf{ab} : abstract \\
+	\textbf{re} : return \\
+	\textbf{br} : break; \\
+	\textbf{de} : default: ... \\
+	\textbf{ca} : catch(Exception e) \\
+	\textbf{if} : if () \\
+	\textbf{el} : else \\
+	\textbf{elif} : else if () \\
+	\textbf{wh} : while () \\
+	\textbf{for} : for (; ; ) \\
+	\textbf{fore} : for ( : ) \\
+	\textbf{sw} : switch () \\
+	\textbf{cs} : case : ... \\
+	\textbf{tc} : public class test extends TestCase \\
+	\textbf{t} : public void test() throws Exception \\
+	\textbf{cl} : class test \\
+	\textbf{in} : interface test extends Parent \\
+	\textbf{v} : String var = null;
+	\item Shell \\
+	\textbf{\#!} : \#!/bin/bash \\
+	\textbf{if} : if ... fi \\
+	\textbf{elif} : elif ... \\
+	\textbf{for} : for ... done \\
+	\textbf{wh} : while ... done \\
+	\textbf{case} : case ... esac
+	\item Python \\
+	\textbf{\#!} : \#!/usr/bin/python \\
+	\textbf{imp} : import \\
+	\textbf{wh} : while ... \\
+	\textbf{for} : for ... \\
+	\textbf{docs} : File: ...  Author: ... Description: ... \\
+	\textbf{def} : def fname() ... \\
+	\textbf{deff} : def fname(): \\
+	\textbf{ld} : var = lambda vars : action \\
+	\textbf{ifmain} : if \_\_name\_\_ == '\_\_main\_\_': \\
+	\textbf{\_} : \_\_init\_\_
+	\item Latex \\
+	\textbf{begin} : {$\backslash$}begin ... \\
+	\textbf{item} : {$\backslash$}begin\{itemize\} ...  \\
+	\textbf{enum} : {$\backslash$}begin\{enumerate\} ... \\
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
