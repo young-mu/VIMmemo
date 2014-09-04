@@ -2,16 +2,16 @@
 
 \usepackage{flushend} % align twocoloumn bottom
 \usepackage{geometry}
-\geometry{left=1.5cm, right=1.5cm, top=0.4cm, bottom=1.6cm} % page margin
+\geometry{left=1.4cm, right=1.4cm, top=-0.6cm, bottom=1.0cm} % page margin
 
 \begin{document}
 
 \twocolumn
 
 \pagestyle{empty}
-\title{VIM commands memo v1.0}
+\title{VIM commands memo v1.1}
 \author{Young}
-\date{2014.08.26}
+\date{2014.09.04}
 \maketitle
 \thispagestyle{empty} % remove page number 
 
@@ -68,6 +68,13 @@
 	\textbf{CTRL+w+Up{$|$}Dn} : \\ switch to file above{$|$}below \\
 	\textbf{CTRL+w+s{$|$}v} : \\ split cur file horizontally{$|$}vertically \\
 	\textbf{CTRL+w+\#+{$|$}\#-} : \\ increase{$|$}decrease window size 
+	\item fold \\
+	\textbf{zf\#+Enter} : fold cur and next \# lines \\
+	\textbf{zf\#G} : fold between cur and \# lines \\
+	\textbf{zf\%} : fold lines among matching braces \\
+	\textbf{zo{$|$}zd} : open{$|$}delete cur folding \\
+	\textbf{zE} : delete all foldings \\
+	\textbf{zM{$|$}zR} : open{$|$}close all foldings
 	\item others \\
 	\textbf{*} : selectcur word \\
 	\textbf{.} : re-operate \\
