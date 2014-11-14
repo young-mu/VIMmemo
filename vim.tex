@@ -13,7 +13,7 @@
 \author{Young}
 \date{2014.11.14}
 \maketitle
-\thispagestyle{empty} % remove page number 
+\thispagestyle{empty} % remove page number
 
 \setlength{\baselineskip}{12pt} % set line space
 
@@ -23,13 +23,13 @@
     \item move \\
     \textbf{\#j{$|$}\#k{$|$}\#h{$|$}\#l} : down{$|$}up{$|$}left{$|$}right \\
     \textbf{\#w{$|$}\#e} : next word head{$|$}tail \\
-    \textbf{\#b} : prev word head \\ 
-    \textbf{\^{$|$}\$} : line head{$|$}tail \\ 
+    \textbf{\#b} : prev word head \\
+    \textbf{\^{$|$}\$} : line head{$|$}tail \\
     \textbf{0} : line head including space
     \item jump \\
     \textbf{\#G} : file \#line \\
-    \textbf{\#\%} : file \# percentage \\ 
-    \textbf{gg{$|$}G} : file head{$|$}tail \\ 
+    \textbf{\#\%} : file \# percentage \\
+    \textbf{gg{$|$}G} : file head{$|$}tail \\
     \textbf{[[{$|$}]]} : segment start{$|$}end \\
     \textbf{\%} : matching brace
     \item flip \\
@@ -40,15 +40,16 @@
     \item insert \\
     \textbf{i{$|$}a} : cur{$|$}next char \\
     \textbf{I{$|$}A} : line head{$|$}tail \\
-    \textbf{O{$|$}o} : new cur{$|$}next line \\ 
-    \textbf{s} : del char and insert \\ 
+    \textbf{O{$|$}o} : new cur{$|$}next line \\
+    \textbf{s} : del char and insert \\
     \textbf{cc(S)} : del line and insert \\
     \textbf{c\${$|$}(C)} : del to line tail and insert
     \item cut(delete) \\
     \textbf{\#x} : char \\
     \textbf{dd{$|$}d\#d{$|$}dd} : line \\
     \textbf{dw{$|$}d\#w{$|$}dw} : cut to char head \\
-    \textbf{d\^{$|$}d\$(D)} : cut to line head{$|$}tail
+    \textbf{d\^{$|$}d\$(D)} : cut to line head{$|$}tail \\
+    \textbf{dH{$|$}dL} : cut to file head{$|$}tail
     \item yank \\
     \textbf{yy{$|$}Y{$|$}y\#y{$|$}\#yy} : line \\
     \textbf{yw{$|$}y\#w{$|$}\#yw} : yank to char head \\
@@ -56,18 +57,18 @@
     \item paste \\
     \textbf{P{$|$}p} : before{$|$}after cur char
     \item undo/redo \\
-    \textbf{\#u} : undo one operation\\ 
+    \textbf{\#u} : undo one operation\\
     \textbf{e!} : undo all operations \\
     \textbf{CTRL+r} : redo one operation
     \item find/replace \\
-    \textbf{m,n/} : find forward(n) or backward(N) \\ 
+    \textbf{m,n/} : find forward(n) or backward(N) \\
     \textbf{m,n?} : find backward(n) or forward(N) \\
     \textbf{r} : replace cur char
     \item split screen \\
     \textbf{CTRL+w+w} : \\ switch among files \\
     \textbf{CTRL+w+Up{$|$}Dn} : \\ switch to file above{$|$}below \\
     \textbf{CTRL+w+s{$|$}v} : \\ split cur file horizontally{$|$}vertically \\
-    \textbf{CTRL+w+\#+{$|$}\#-} : \\ increase{$|$}decrease window size 
+    \textbf{CTRL+w+\#+{$|$}\#-} : \\ increase{$|$}decrease window size
     \item fold \\
     \textbf{zf\#+Enter} : fold cur and next \# lines \\
     \textbf{zf\#G} : fold between cur and \# lines \\
@@ -87,7 +88,7 @@
     \begin{itemize}
     \item save \& exit \\
     \textbf{w{$|$}w!} : save{$|$}save forcibly \\
-    \textbf{q{$|$}q!} : exit{$|$}exit without saving \\ 
+    \textbf{q{$|$}q!} : exit{$|$}exit without saving \\
     \textbf{wq(x)} : save \& exit \\
     \textbf{qa(qall)} : exit all labeled files
     \item split screen \\
@@ -101,9 +102,9 @@
     \textbf{first{$|$}last} : first{$|$}last file
     \item demarcate \\
     \textbf{m,ny} : yank line\#m to line\#n \\
-    \textbf{m,+ny} : yank n lines after line\#m \\  
+    \textbf{m,+ny} : yank n lines after line\#m \\
     \textbf{.{$|$}1{$|$}\$} : cur{$|$}first{$|$}last line \\
-    \textbf{\%} : all lines 
+    \textbf{\%} : all lines
     \item replace \\
     \textbf{s/pattern/subs/gi} : \\ replace \textit{pattern} to subs \\ (g=global i=ignorecase)
     \item others \\
